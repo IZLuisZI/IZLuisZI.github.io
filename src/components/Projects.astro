@@ -7,6 +7,8 @@ import React from "./icons/React.astro"
 import Css from "./icons/Css.astro"
 import Html from "./icons/Html.astro"
 import Tailwind from "./icons/Tailwind.astro"
+import socket from "./icons/socket.astro"
+import Nodejs from "./icons/node.astro"
 
 const TAGS = {
   NEXT: {
@@ -34,6 +36,16 @@ const TAGS = {
     class: "bg-[#38b2ac] text-white",
     icon: Tailwind,
   },
+  SOCKETIO: {
+    name: "Socket.io",
+    class: "bg-black text-white",
+    icon: socket,
+  },
+  NODEJS: {
+    name: "Node.js",
+    class: "bg-[#68a063] text-white",
+    icon: Nodejs,
+  },
 }
 const PROJECTS = [
   {
@@ -54,12 +66,20 @@ const PROJECTS = [
     tags: [TAGS.NEXT, TAGS.TAILWIND ],
   },
   {
+    title: "Chat App",
+    description:
+      "A chat app where you can chat with friends. Created using socket.io, Tailwind CSS and a small Node js server for the backend.",
+    github: "https://github.com/IZLuisZI/chat-app",
+    image: "/projects/Chatapp.png",
+    tags: [ TAGS.HTML, TAGS.TAILWIND, TAGS.SOCKETIO, TAGS.NODEJS],
+  },
+  {
     title: "Vitejs - Homepage Clone",
     description:
       "A clone of the Vitejs homepage. Created with semantic HTML, CSS, and vanilla Javascript.",
-    link: "https://github.com/IZLuisZI/Search-game-demo",
+    github: "https://github.com/IZLuisZI/vite-homepage-clone",
     image: "/projects/vitehomepage.png",
-    tags: [TAGS.NEXT, TAGS.JAVASCRIPT, TAGS.CSS, TAGS.HTML],
+    tags: [TAGS.HTML,TAGS.TAILWIND,  ],
   },
 ]
 ---
@@ -70,7 +90,7 @@ const PROJECTS = [
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
   <div class="w-full md:w-1/2">
     <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+      <img alt="project descrition" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
     </div>
   </div>
 
