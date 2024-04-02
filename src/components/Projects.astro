@@ -6,6 +6,7 @@ import LinkButton from "./LinkButton.astro"
 import React from "./icons/React.astro"
 import Css from "./icons/Css.astro"
 import Html from "./icons/Html.astro"
+import Tailwind from "./icons/Tailwind.astro"
 
 const TAGS = {
   NEXT: {
@@ -13,7 +14,7 @@ const TAGS = {
     class: "bg-black text-white",
     icon: React,
   },
-  TAILWIND: {
+  JAVASCRIPT: {
     name: "Javascript",
     class: "bg-[#003159] text-white",
     icon: Js,
@@ -28,6 +29,11 @@ const TAGS = {
     class: "bg-[#f16529] text-white",
     icon: Html,
   },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#38b2ac] text-white",
+    icon: Tailwind,
+  },
 }
 const PROJECTS = [
   {
@@ -37,7 +43,15 @@ const PROJECTS = [
     link: "https://github.com/IZLuisZI/Search-game-demo",
     github: "https://github.com/IZLuisZI/Search-game-demo",
     image: "/projects/gamesearch.png",
-    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.CSS],
+    tags: [TAGS.NEXT, TAGS.JAVASCRIPT, TAGS.CSS],
+  },
+  {
+    title: "Quiz App",
+    description:
+      "An app where you can take quizzes and see your score. Created with React, and Tailwind CSS.",
+    github: "https://github.com/IZLuisZI/Quiz-test",
+    image: "/projects/Quizapp.png",
+    tags: [TAGS.NEXT, TAGS.TAILWIND ],
   },
   {
     title: "Vitejs - Homepage Clone",
@@ -45,7 +59,7 @@ const PROJECTS = [
       "A clone of the Vitejs homepage. Created with semantic HTML, CSS, and vanilla Javascript.",
     link: "https://github.com/IZLuisZI/Search-game-demo",
     image: "/projects/vitehomepage.png",
-    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.CSS, TAGS.HTML],
+    tags: [TAGS.NEXT, TAGS.JAVASCRIPT, TAGS.CSS, TAGS.HTML],
   },
 ]
 ---
