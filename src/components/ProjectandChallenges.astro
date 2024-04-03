@@ -91,6 +91,64 @@ const PROJECTS = [
     tags: [TAGS.HTML,TAGS.TAILWIND,  ],
   },
 ]
+
+const CHALLENGES = [
+{
+    title: "Twitter/X follow card",
+    description:
+      "A follow card component for a social media app. Created with React and Tailwind CSS.",
+    github: "https://github.com/IZLuisZI/small-desmontrations",
+    image: "/projects/xcard.png",
+    tags: [TAGS.NEXT,  TAGS.CSS],
+  },
+  {
+    title: "Portfolio Template",
+    description:"A simple portfolio template created with HTML and CSS.",
+    github: "https://github.com/IZLuisZI/small-desmontrations",
+    image: "/projects/samplePortfolio.png",
+    tags: [TAGS.HTML, TAGS.TAILWIND ],
+  },
+  {
+    title: "Accoridion component",
+    description:"A simple accordion component",
+    github: "https://github.com/IZLuisZI/small-desmontrations",
+    image: "/projects/accordion.png",
+    tags: [TAGS.HTML, TAGS.TAILWIND ],
+  },
+  {
+    title: "IGN page clone layout",
+    description:
+      "A clone of the IGN page layout. Created with HTML and CSS.",
+    github: "https://github.com/IZLuisZI/small-desmontrations",
+    image: "/projects/ignLayout.png",
+    tags: [TAGS.HTML , TAGS.CSS ],
+  },
+  {
+    title: "Carousel component",
+    description:
+      "A simple carousel component",
+    github: "https://github.com/IZLuisZI/small-desmontrations",
+    image: "/projects/carousel.png",
+    tags: [TAGS.HTML , TAGS.CSS , TAGS.JAVASCRIPT ],
+  },
+  {
+    title: "Todo app",
+    description:
+      "A simple todo app created with HTML and vanilla javasscript.",
+    github: "https://github.com/IZLuisZI/small-desmontrations",
+    image: "/projects/todo.png",
+    tags: [TAGS.HTML , TAGS.CSS , TAGS.JAVASCRIPT ],
+  },
+  {
+    title: "Frontend Mentor - Four card feature section",
+    description:
+      "A clone of the Four card feature section from Frontend Mentor. Created with HTML and CSS.",
+    github: "https://github.com/IZLuisZI/small-desmontrations",
+    image: "/projects/frontendmentor1.png",
+    tags: [TAGS.HTML , TAGS.CSS  ],
+  },
+ 
+]
 ---
 
 <div class="flex flex-col gap-y-16">
@@ -142,6 +200,52 @@ const PROJECTS = [
 </article>
     ))
   }
+  <div class="flex text-2xl font-bold items-center gap-2  "><span class="hover:underline ">Small challenges</span> </div>
+  
+  {
+    CHALLENGES.map(({ image, title, description, tags, github }) => (
+    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+  <div class="w-full md:w-1/2">
+    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+      <img alt="project descrition" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+    </div>
+  </div>
+
+  <div class="w-full md:w-1/2 md:max-w-lg">
+    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+      {title}
+    </h3>
+    <div class="flex flex-wrap mt-2">
+      <ul class="flex flex-row mb-2 gap-x-2">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 items-center rounded-full text-xs ${tag.class} py-1 px-2 `}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+      <footer class="flex items-end justify-start mt-4 gap-x-4">
+          {github && (
+            <LinkButton href={github}>
+              <GitHub class="size-6" />
+              Code
+              
+            </LinkButton>
+          )}
+          
+        </footer>
+    </div>
+  </div>
+</article>
+    ))
+  }
+
 <div class="flex text-2xl font-bold items-center gap-2  "><span class="hover:underline "> <a href="/"> Go back</a></span> </div>
 </div>
 
