@@ -1,8 +1,9 @@
 ---
 import SunIcon from "./icons/Sun.astro"
 import MoonIcon from "./icons/Moon.astro"
+import SystemIcon from "./icons/System.astro"
 
-const THEMES = ["Light", "Dark"]
+const THEMES = ["Light", "Dark", "System"]
 ---
 
 <div class="relative ml-1 mr-1">
@@ -10,13 +11,16 @@ const THEMES = ["Light", "Dark"]
     id="theme-toggle-btn"
     class="appearance-none border-none flex hover:scale-125 transition"
   >
-    <span class="sr-only">Chose theme</span>
+    <span class="sr-only">Elige el tema</span>
     <SunIcon id="light" class="theme-toggle-icon size-5 transition-all" />
     <MoonIcon
       id="dark"
       class="theme-toggle-icon absolute size-5 transition-all"
     />
-    
+    <SystemIcon
+      id="system"
+      class="theme-toggle-icon absolute size-5 transition-all"
+    />
   </button>
   <div
     id="themes-menu"
@@ -59,18 +63,23 @@ const THEMES = ["Light", "Dark"]
   const themesMenu = document.getElementById("themes-menu")
 
   const getThemePreference = () => {
-  if (typeof localStorage !== "undefined") {
-    return localStorage.getItem("theme") ?? "dark"
+    if (typeof localStorage !== "undefined") {
+      return localStorage.getItem("theme") ?? "system"
+    }
+
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light"
   }
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "dark"
-}
+
   const updateIcon = (themePreference) => {
     document.querySelectorAll(".theme-toggle-icon").forEach((element) => {
       element.style.scale = element.id === themePreference ? "1" : "0"
     })
   }
+  document.addEventListener("astro:page-load", () => {
+  updateTheme();
+});
 
   const updateTheme = () => {
     if (remove != null) {
