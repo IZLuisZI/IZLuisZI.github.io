@@ -1,9 +1,8 @@
 ---
 import SunIcon from "./icons/Sun.astro"
 import MoonIcon from "./icons/Moon.astro"
-import SystemIcon from "./icons/System.astro"
 
-const THEMES = ["Light", "Dark", "System"]
+const THEMES = ["Light", "Dark"]
 ---
 
 <div class="relative ml-1 mr-1">
@@ -17,10 +16,7 @@ const THEMES = ["Light", "Dark", "System"]
       id="dark"
       class="theme-toggle-icon absolute size-5 transition-all"
     />
-    <SystemIcon
-      id="system"
-      class="theme-toggle-icon absolute size-5 transition-all"
-    />
+    
   </button>
   <div
     id="themes-menu"
@@ -63,15 +59,13 @@ const THEMES = ["Light", "Dark", "System"]
   const themesMenu = document.getElementById("themes-menu")
 
   const getThemePreference = () => {
-    if (typeof localStorage !== "undefined") {
-      return localStorage.getItem("theme") ?? "system"
-    }
-
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light"
+  if (typeof localStorage !== "undefined") {
+    return localStorage.getItem("theme") ?? "dark"
   }
-
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "dark"
+}
   const updateIcon = (themePreference) => {
     document.querySelectorAll(".theme-toggle-icon").forEach((element) => {
       element.style.scale = element.id === themePreference ? "1" : "0"
