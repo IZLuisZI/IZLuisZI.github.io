@@ -4,15 +4,17 @@ import Layout from "@/layouts/Layout.astro"
 import AboutMe from "@/components/AboutMe.astro"
 import CodeIcon from "@/components/icons/Code.astro"
 import ProfileCheck from "@/components/icons/ProfileCheck.astro"
+import Technologies from "@/components/icons/Computer.astro"
 import Projects from "@/components/Projects.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
 import Hero from "@/components/Hero.astro"
+import MyTech from "@/components/Technologies.astro"
 
 ---
 
 <Layout
   title="Front end developer. From Miami, FL. I specialize in the creation of websites."
-  description="This is the home page of my website."
+  description="This is the home page of my website where you can find information about me, my projects and how to contact me."
 >
   <main class="px-4">
     <SectionContainer class="py-16 md:py-36">
@@ -31,6 +33,14 @@ import Hero from "@/components/Hero.astro"
         Featured Projects
       </h2>
       <Projects />
+    </SectionContainer>
+    <SectionContainer id="technologies">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
+      >
+        <Technologies class="size-8 " />
+Technologies     </h2>
+      <MyTech />
     </SectionContainer>
 
 
