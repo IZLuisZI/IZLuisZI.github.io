@@ -25,7 +25,7 @@ const { description} = Astro.props
     <ViewTransitions />
   </head>
 
-  <body class="relative text-black dark:text-white">
+  <body class="relative text-black dark:text-white ">
     <div
       class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-gray-950
       bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))]
@@ -36,6 +36,8 @@ const { description} = Astro.props
     <slot />
     
     <Footer />
+    <div id="mouse" class="size-96 z-0 dark:bg-white bg-black blur-3xl  opacity-10 rounded-full absolute "  ></div>
+
     <style is:global>
       :root {
         color-scheme: light dark;
@@ -115,5 +117,16 @@ const { description} = Astro.props
         }
       }
     </style>
+    <script>
+      const mouse = document.getElementById('mouse')
+      document.addEventListener('mousemove', (e) => {
+        setTimeout(() => {
+          if (mouse) {
+            mouse.style.left = e.pageX- 200 + 'px'
+            mouse.style.top = e.pageY - 200+ 'px'
+          }
+        }, 50)
+      })
+    </script>
   </body>
 </html>
