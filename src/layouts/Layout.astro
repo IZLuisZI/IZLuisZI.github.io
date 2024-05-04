@@ -127,6 +127,22 @@ const { description} = Astro.props
           }
         }, 50)
       })
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  if (!isMobile) {
+    document.addEventListener('mousemove', (e) => {
+      setTimeout(() => {
+        if (mouse) {
+          mouse.style.left = e.pageX - 200 + 'px'
+          mouse.style.top = e.pageY - 200 + 'px'
+        }
+      }, 50)
+    })
+  } else {
+    if (mouse) {
+      mouse.style.display = 'none';
+    }
+  }
+  console.log('isMobile', isMobile)
     </script>
   </body>
 </html>
