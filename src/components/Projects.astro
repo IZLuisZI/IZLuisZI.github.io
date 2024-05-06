@@ -9,6 +9,7 @@ import Html from "./icons/Html.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import socket from "./icons/socket.astro"
 import Nodejs from "./icons/node.astro"
+import Typescript from "./icons/Typescript.astro"
 import Arrow from "./icons/arrow.astro"
 
 const TAGS = {
@@ -16,6 +17,11 @@ const TAGS = {
     name: "React.js",
     class: "bg-black text-white",
     icon: React,
+  },
+  TYPESCRIPT: {
+    name: "Typescript",
+    class: "bg-blue-950 text-white",
+    icon: Typescript,
   },
   JAVASCRIPT: {
     name: "Javascript",
@@ -61,11 +67,11 @@ const PROJECTS = [
   {
     title: "Best Buy - Stock checker",
     description:
-      "Best Buy Stock Checker is a web application that allows users to check the stock status of products at Best Buy. It uses a server-side script to scrape product data from the Best Buy website and a React-based front-end to display the results.",
+      "Best Buy Stock Checker is a web application that allows users to check the stock status of products at Best Buy. It uses a server-side script to scrape product data from the Best Buy website and a React-based front-end to display the results. Used typescript for the backend and React for the frontend.",
     
     github: "https://github.com/IZLuisZI/CheckStock",
     image: "/projects/bestbuy.webp",
-    tags: [TAGS.NEXT,TAGS.NODEJS ,TAGS.TAILWIND ],
+    tags: [TAGS.NEXT,TAGS.TYPESCRIPT,TAGS.NODEJS ,TAGS.TAILWIND ],
   }
   ,
   {
