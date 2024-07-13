@@ -1,16 +1,16 @@
 ---
-import GitHub from "./icons/GitHub.astro"
-import Js from "./icons/Js.astro"
-import Link from "./icons/Link.astro"
-import LinkButton from "./LinkButton.astro"
-import React from "./icons/React.astro"
-import Css from "./icons/Css.astro"
-import Html from "./icons/Html.astro"
-import Tailwind from "./icons/Tailwind.astro"
-import socket from "./icons/socket.astro"
-import Nodejs from "./icons/node.astro"
-import Typescript from "./icons/Typescript.astro"
-import Arrow from "./icons/arrow.astro"
+import GitHub from "./icons/GitHub.astro";
+import Js from "./icons/Js.astro";
+import Link from "./icons/Link.astro";
+import LinkButton from "./LinkButton.astro";
+import React from "./icons/React.astro";
+import Css from "./icons/Css.astro";
+import Html from "./icons/Html.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import socket from "./icons/socket.astro";
+import Nodejs from "./icons/node.astro";
+import Typescript from "./icons/Typescript.astro";
+import Arrow from "./icons/arrow.astro";
 
 const TAGS = {
   NEXT: {
@@ -53,71 +53,82 @@ const TAGS = {
     class: "bg-gray-900 text-white",
     icon: Nodejs,
   },
-}
+};
 const PROJECTS = [
   {
-    title: "BookMark - A bookmarking Website", 
+    title: "Fitness Gym - A Gym landing page",
+    description:
+      "A landing page for a gym that offers workout routines and equipment. This landing page was created using vanilla HTML, Tailwind, and javascript to provide a customizable and visually appealing interface. Original design by Peloton.",
+    link: "https://luissoriano.dev/gym-homepage/",
+    github: "https://github.com/IZLuisZI/gym-homepage",
+    image: "/projects/gym.webp",
+    tags: [TAGS.HTML, TAGS.TAILWIND, TAGS.JAVASCRIPT],
+  },
+  {
+    title: "BookMark - A bookmarking Website",
     description:
       "A landing page for a bookmarking website that allows users to save and organize their favorite websites. This landing page was created using React.js and Tailwind CSS to provide a customizable and visually appealing interface. Original design by Frontend Mentor.",
     link: "https://luissoriano.dev/bookmark/",
     github: "https://github.com/IZLuisZI/bookmark",
     image: "/projects/bookmark.webp",
     tags: [TAGS.NEXT, TAGS.TAILWIND],
-  }
-  
-]
+  },
+];
 ---
 
 <div class="flex flex-col gap-y-16 z-10">
   {
     PROJECTS.map(({ image, title, description, tags, link, github }) => (
-    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-  <div class="w-full md:w-1/2">
-    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt="project descrition" class="object-cover object-top z-10 w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
-    </div>
-  </div>
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <img
+              alt="project descrition"
+              class="object-cover object-top z-10 w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+              loading="lazy"
+              src={image}
+            />
+          </div>
+        </div>
 
-  <div class="w-full md:w-1/2 md:max-w-lg">
-    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-      {title}
-    </h3>
-    <div class="flex flex-wrap mt-2">
-      <ul class="flex flex-row mb-2 gap-x-2">
-          {tags.map((tag) => (
-            <li>
-              <span
-                class={`flex gap-x-2 items-center rounded-full text-xs ${tag.class} py-1 px-2 `}
-              >
-                <tag.icon class="size-4" />
-                {tag.name}
-              </span>
-            </li>
-          ))}
-        </ul>
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+            {title}
+          </h3>
+          <div class="flex flex-wrap mt-2">
+            <ul class="flex flex-row mb-2 gap-x-2">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 items-center rounded-full text-xs ${tag.class} py-1 px-2 `}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
 
-      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
-      <footer class="flex items-end justify-start mt-4 gap-x-4">
-          {github && (
-            <LinkButton href={github}>
-              <GitHub class="size-6" />
-              Code
-              
-            </LinkButton>
-          )}
-          {link && (
-            <LinkButton href={link}>
-              <Link class="size-4" />
-              Preview
-            </LinkButton>
-          )}
-        </footer>
-    </div>
-  </div>
-</article>
+            <div class="mt-2 text-gray-700 dark:text-gray-400">
+              {description}
+            </div>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {github && (
+                <LinkButton href={github}>
+                  <GitHub class="size-6" />
+                  Code
+                </LinkButton>
+              )}
+              {link && (
+                <LinkButton href={link}>
+                  <Link class="size-4" />
+                  Preview
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </div>
+      </article>
     ))
   }
 </div>
-
-
-
