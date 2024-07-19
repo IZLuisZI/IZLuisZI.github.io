@@ -1,41 +1,68 @@
 ---
-const personalImageAlt = "Luis Soriano"
-import LinkedInIcon from "@/components/icons/LinkedIn.astro"
-import MailIcon from "@/components/icons/Mail.astro"
-import SocialPill from "@/components/SocialPill.astro"
+const personalImageAlt = "Luis Soriano";
+import LinkedInIcon from "@/components/icons/LinkedIn.astro";
+import MailIcon from "@/components/icons/Mail.astro";
+import SocialPill from "@/components/SocialPill.astro";
 ---
 
 <div class="max-w-xl">
   <div class="flex gap-4 mb-4">
     <img
-    
       class="rounded-full shadow-lg size-16"
       src="/sorianoluis.webp"
       alt={personalImageAlt}
     />
-    
-    </a>
   </div>
-  <h1
-    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
-  >
-    Hi!, I'm Luis
-  </h1>
-  <p
-    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
-  >
-    <strong
-      >Front end developer.</strong
-    > From Miami, FL. I specialize in the creation of websites.
-  </p>
-  <nav class="flex flex-wrap gap-4 mt-8">
-    <SocialPill href="mailto:sorianoluise05@gmail.com">
-      <MailIcon class="size-4" />
-      Contact me
-    </SocialPill>
-    <SocialPill href="https://www.linkedin.com/in/luis-soriano043/">
-      <LinkedInIcon class="size-4" />
-      LinkedIn
-    </SocialPill>
-  </nav>
 </div>
+<h1
+  class="type relative text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+>
+  Hi!, I'm Luis
+</h1>
+<p
+  class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
+>
+  <strong>Front end developer.</strong> From Miami, FL. I specialize in the creation
+  of websites.
+</p>
+<nav class="flex flex-wrap gap-4 mt-8">
+  <SocialPill href="mailto:sorianoluise05@gmail.com">
+    <MailIcon class="size-4" />
+    Contact me
+  </SocialPill>
+  <SocialPill href="https://www.linkedin.com/in/luis-soriano043/">
+    <LinkedInIcon class="size-4" />
+    LinkedIn
+  </SocialPill>
+</nav>
+
+<style>
+  @keyframes typing {
+    from {
+      width: 0ch;
+    }
+    to {
+      width: 10ch;
+    }
+  }
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+  .type::after {
+    content: "";
+    margin-left: 0.3rem;
+    border-right: 0.05em solid;
+    animation: blink 1s step-end infinite;
+  }
+  .type {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 1s steps(10) 1s 1 normal both;
+  }
+</style>
