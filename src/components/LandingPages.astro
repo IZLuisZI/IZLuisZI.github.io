@@ -11,6 +11,7 @@ import socket from "./icons/socket.astro";
 import Nodejs from "./icons/node.astro";
 import Typescript from "./icons/Typescript.astro";
 import Arrow from "./icons/arrow.astro";
+import Astroicon from "./icons/Astro.astro";
 
 const TAGS = {
   NEXT: {
@@ -53,6 +54,11 @@ const TAGS = {
     class: "bg-gray-900 text-white",
     icon: Nodejs,
   },
+  ASTRO: {
+    name: "Astro",
+    class: "bg-[#003159] text-white",
+    icon: Astroicon,
+  },
 };
 const PROJECTS = [
   {
@@ -71,6 +77,15 @@ const PROJECTS = [
     github: "https://github.com/IZLuisZI/gym-homepage",
     image: "/projects/gym.webp",
     tags: [TAGS.HTML, TAGS.TAILWIND, TAGS.JAVASCRIPT],
+  },
+  {
+    title: "Easy Bank - A banking landing page",
+    description:
+      "A landing page for a banking website that offers online banking services. This landing page was created using Astro and Tailwind CSS to provide a customizable and visually appealing interface. Original design by Frontend Mentor.",
+    link: "https://luissoriano.dev/easy-bank/",
+    github: "https://github.com/IZLuisZI/eminent-eclipse",
+    image: "/projects/bank.png",
+    tags: [TAGS.ASTRO, TAGS.TAILWIND],
   },
   {
     title: "BookMark - A bookmarking Website",
