@@ -1,30 +1,30 @@
 ---
+import Js from "./icons/Js.astro";
 
-import Js from "./icons/Js.astro"
-
-import React from "./icons/React.astro"
-import Css from "./icons/Css.astro"
-import Html from "./icons/Html.astro"
-import Tailwind from "./icons/Tailwind.astro"
-import socket from "./icons/socket.astro"
-import Nodejs from "./icons/node.astro"
-import LightNextJS from "./icons/Lightnext.astro"
-import Git from "./icons/Git.astro"
-import Bootstrap from "./icons/Bootstrap.astro"
-import npm from "./icons/npm.astro"
-import Typescript from "./icons/Typescript.astro"
-import Java from "./icons/Java.astro"
+import React from "./icons/React.astro";
+import Css from "./icons/Css.astro";
+import Html from "./icons/Html.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import socket from "./icons/socket.astro";
+import Nodejs from "./icons/node.astro";
+import LightNextJS from "./icons/Lightnext.astro";
+import Git from "./icons/Git.astro";
+import Bootstrap from "./icons/Bootstrap.astro";
+import npm from "./icons/npm.astro";
+import Typescript from "./icons/Typescript.astro";
+import Java from "./icons/Java.astro";
+import AstroIcon from "./icons/Astro.astro";
 
 const getThemePreference = () => {
   if (typeof localStorage !== "undefined") {
-    return localStorage.getItem("theme") ?? "system"
+    return localStorage.getItem("theme") ?? "system";
   }
   return window.matchMedia("(prefers-color-scheme: dark)").matches
     ? "dark"
-    : "light"
-}
+    : "light";
+};
 
- const TAGS = {
+const TAGS = {
   NEXT: {
     name: "React.js",
     class: "size-8",
@@ -35,11 +35,16 @@ const getThemePreference = () => {
     class: "size-8",
     icon: Git,
   },
-  
+
   JAVASCRIPT: {
     name: "Javascript",
     class: "size-8",
     icon: Js,
+  },
+  Astro: {
+    name: "Astro",
+    class: "size-8",
+    icon: AstroIcon,
   },
   CSS: {
     name: "CSS",
@@ -61,84 +66,86 @@ const getThemePreference = () => {
     class: "size-8",
     icon: socket,
   },
-    BOOTSTRAP: {
-        name: "Bootstrap",
-        class: "size-8",
-        icon: Bootstrap,
-    },
-    NPM: {
-        name: "Npm",
-        class: "size-8",
-        icon: npm,
-    },
-  
-}
+  BOOTSTRAP: {
+    name: "Bootstrap",
+    class: "size-8",
+    icon: Bootstrap,
+  },
+  NPM: {
+    name: "Npm",
+    class: "size-8",
+    icon: npm,
+  },
+};
 const LEARNING_TAGS = {
-  
-  
   NextJS: {
     name: "NextJS",
     class: "size-8",
-    icon:  LightNextJS ,
+    icon: LightNextJS,
   },
-  
+
   NODEJS: {
     name: "Node.js",
     class: "size-8",
 
     icon: Nodejs,
   },
-    JAVA: {
-        name: "Java",
-        class: "size-8",
-        icon: Java,
-    },
-    TYPESCRIPT: {
-        name: "Typescript",
-        class: "size-8",
-        icon: Typescript,
-    },
-
-}
+  JAVA: {
+    name: "Java",
+    class: "size-8",
+    icon: Java,
+  },
+  TYPESCRIPT: {
+    name: "Typescript",
+    class: "size-8",
+    icon: Typescript,
+  },
+};
 ---
 
-<article class="grid mb-96 items-center grid-cols-1 md:grid-cols-2 gap-8 text-gray-700 dark:text-gray-300 ">
-<div class="border-2 border-white rounded-xl p-4">
+<article
+  class="grid mb-96 items-center grid-cols-1 md:grid-cols-2 gap-8 text-gray-700 dark:text-gray-300"
+>
+  <div class="border-2 border-white rounded-xl p-4">
     <h2 class="text-2xl font-bold mb-12">Current Technologies</h2>
     <div
-    class="[&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-extrabold [&>p>strong]:font-mono text-pretty order-2 md:order-1 grid grid-cols-3 gap-6"
-  >
-  {Object.entries(TAGS).map(([key, value]) => (
-    <div class="flex flex-col items-center justify-center">
-      <value.icon class={value.class} />
-      <p>{value.name}</p>
+      class="[&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-extrabold [&>p>strong]:font-mono text-pretty order-2 md:order-1 grid grid-cols-3 gap-6"
+    >
+      {
+        Object.entries(TAGS).map(([key, value]) => (
+          <div class="flex flex-col items-center justify-center">
+            <value.icon class={value.class} />
+            <p>{value.name}</p>
+          </div>
+        ))
+      }
     </div>
-  ))}
-  </div></div>
+  </div>
   <div class="self-start border-2 border-white rounded-xl p-4 h-full">
     <h2 class="text-2xl font-bold mb-12">Current Learning</h2>
     <div
-    class="[&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-extrabold [&>p>strong]:font-mono text-pretty order-2 md:order-1 grid grid-cols-3 gap-6"
-  >
-  {Object.entries(LEARNING_TAGS).map(([key, value]) => (
-    <div class="flex flex-col items-center justify-center">
-      <value.icon class={value.class} />
-      <p>{value.name}</p>
+      class="[&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-extrabold [&>p>strong]:font-mono text-pretty order-2 md:order-1 grid grid-cols-3 gap-6"
+    >
+      {
+        Object.entries(LEARNING_TAGS).map(([key, value]) => (
+          <div class="flex flex-col items-center justify-center">
+            <value.icon class={value.class} />
+            <p>{value.name}</p>
+          </div>
+        ))
+      }
     </div>
-  ))}
-  </div></div>
-
-  
-
+  </div>
 </article>
 
 <style>
-    @keyframes animatedBorder {
-        0%, 100% {
-            background-position: 0% 50%;
-        }
-        50% {
-            background-position: 100% 50%;
-        }
+  @keyframes animatedBorder {
+    0%,
+    100% {
+      background-position: 0% 50%;
     }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
 </style>
